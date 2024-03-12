@@ -1,5 +1,12 @@
+import TodoList from "./TodoList";
+
 const App = () => {
-  return <div>Hello Portfolio</div>;
+  return (
+    <div>
+      <h2>Hello Portfolio</h2>
+      <TodoList />
+    </div>
+  );
 };
 
 export default App;
