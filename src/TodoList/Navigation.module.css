@@ -1,0 +1,14 @@
+.nav-link:hover {
+  padding: 0;
+  border-bottom: 1px solid black;
+}
+
+.nav-wrapper {
+  margin-bottom: 8px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+}

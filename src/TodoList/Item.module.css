@@ -6,3 +6,13 @@ ul {
 .done {
   text-decoration: line-through;
 }
+
+.line {
+  display: flex;
+  gap: 8px;
+}
+
+.remove-btn {
+  padding: 0 4px;
+  color: red;
+}

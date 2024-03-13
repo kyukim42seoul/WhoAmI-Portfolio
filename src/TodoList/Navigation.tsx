@@ -1,20 +1,22 @@
 import styles from "./Navigation.module.css";
+import { Filter } from "./TodoList";
 
-const Navigation = ({ setFilter }) => {
+interface Props {
+  setFilter: React.Dispatch<React.SetStateAction<Filter>>;
+}
+
+const Navigation = ({ setFilter }: Props) => {
   return (
     <div className="nav-container">
-      <nav style={{ marginBottom: "8px" }}>
-        <ul style={{ display: "flex", gap: "16px" }}>
+      <nav className={styles["nav-wrapper"]}>
+        <ul className={styles["nav-list"]}>
           <li className={styles["nav-link"]} onClick={() => setFilter("All")}>
             <a>All</a>
           </li>
           <li className={styles["nav-link"]} onClick={() => setFilter("Todo")}>
             <a>Todo</a>
           </li>
-          <li
-            className={styles["nav-link"]}
-            onClick={() => setFilter("Complete")}
-          >
+          <li className={styles["nav-link"]} onClick={() => setFilter("Done")}>
             <a>Done</a>
           </li>
         </ul>
