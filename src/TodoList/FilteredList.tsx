@@ -1,7 +1,6 @@
 import styles from "./FilteredList.module.css";
 import Item from "./Item";
-import { Todo, Filter } from "./TodoList.tsx";
-import { v4 as uuidv4 } from "uuid";
+import { Filter, Todo } from "./TodoList.tsx";
 
 interface Props {
   items: Todo[];

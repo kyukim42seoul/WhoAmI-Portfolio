@@ -1,8 +1,6 @@
 import React from "react";
+
 import styles from "./Item.module.css";
-
-import { v4 as uuidv4 } from "uuid";
-
 import { Todo, createTodo } from "./TodoList.tsx";
 
 interface Props {

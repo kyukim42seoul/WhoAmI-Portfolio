@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import styles from "./TodoList.module.css";
 
-import Navigation from "./Navigation.tsx";
-import FilteredList from "./FilteredList.tsx";
 import AddTodo from "./AddTodo.tsx";
+import FilteredList from "./FilteredList.tsx";
+import Navigation from "./Navigation.tsx";
+import styles from "./TodoList.module.css";
 
 export type Todo = {
   id: string;
