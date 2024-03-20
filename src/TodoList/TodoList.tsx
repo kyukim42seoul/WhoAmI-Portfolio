@@ -30,16 +30,19 @@ const TodoList = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newTodo: Todo = createTodo(inputText, false);
-    setTodos((prev) => {
-      const newTodos = [...prev, newTodo];
-      return newTodos;
-    });
+    if (inputText) {
+      const newTodo: Todo = createTodo(inputText, false);
+      setTodos((prev) => {
+        const newTodos = [...prev, newTodo];
+        return newTodos;
+      });
+    }
     setInputText("");
   };
 
   return (
     <div className={styles.container}>
+      <h3>Todo List</h3>
       <Navigation setFilter={setFilter} />
       <FilteredList items={Todos} filter={filter} setTodos={setTodos} />
       <AddTodo

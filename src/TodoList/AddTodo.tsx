@@ -1,4 +1,5 @@
 import { FormEventHandler } from "react";
+import styles from "./AddTodo.module.css";
 
 interface Props {
   handleSubmit: FormEventHandler<HTMLFormElement>;
@@ -8,8 +9,8 @@ interface Props {
 
 const AddTodo = ({ handleSubmit, inputText, setInputText }: Props) => {
   return (
-    <div className="add-container">
-      <form onSubmit={handleSubmit}>
+    <div className={styles["add-container"]}>
+      <form className={styles["add-form"]} onSubmit={handleSubmit}>
         <input
           value={inputText}
           onChange={(e) => {
