@@ -1,0 +1,26 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid grey;
+  border-radius: 16px;
+}
+
+.id-wrapper {
+}
+
+.id-guide {
+  color: red;
+}
+
+.password-wrapper {
+}
+
+.password-guide {
+  color: red;
+}
+
+.result-guide {
+  color: red;
+}
