@@ -40,10 +40,7 @@ export const Login = () => {
     idRef.current?.focus();
   }, []);
 
-  useEffect(() => {
-    console.log("hide: ", hide);
-    console.log("valid: ", valid);
-  }, [hide]);
+  useEffect(() => {}, [hide]);
 
   const catchEnter = (event: { key: string }) => {
     if (!submitRef) {
