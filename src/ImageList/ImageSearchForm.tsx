@@ -1,6 +1,8 @@
 import { useState } from "react";
 import styles from "./ImageSearchForm.module.css";
-import { BASE_URL } from "../constants.ts";
+//import { BASE_URL } from "../constants.ts";
+
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 interface Props {
   setQuery: React.Dispatch<React.SetStateAction<string>>;

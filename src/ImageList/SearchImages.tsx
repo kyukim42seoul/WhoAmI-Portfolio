@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import Images from "./Images.tsx";
-import { API_KEY } from "../constants.ts";
+//import { API_KEY } from "../constants.ts";
 import styles from "./SearchImages.module.css";
+
+const API_KEY = import.meta.env.VITE_PHOTO_KEY;
 
 interface Props {
   query: string;

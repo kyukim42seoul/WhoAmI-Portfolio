@@ -43,6 +43,7 @@ const TodoList = () => {
   return (
     <div className={styles.container}>
       <h3>Todo List</h3>
+      <p> 할 일을 추가, 삭제, 필터링 할 수 있는 페이지 </p>
       <Navigation setFilter={setFilter} />
       <FilteredList items={Todos} filter={filter} setTodos={setTodos} />
       <AddTodo

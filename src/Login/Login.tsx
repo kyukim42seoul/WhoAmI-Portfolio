@@ -1,9 +1,9 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, SetStateAction } from "react";
 import styles from "./Login.module.css";
 
 // 아이디는 매 입력마다 형식을 검증해도 되지만 비밀번호는 그렇게하면 감시당하고 있다는 느낌을 줄 수 있다. 따라서 비밀번호는 엔터까지 입력된 후 검증한다.
 
-const convertRegexExecToBoolean = (regex, value) => {
+const convertRegexExecToBoolean = (regex: RegExp, value: any) => {
   return regex.exec(value) === null;
 };
 
@@ -28,16 +28,16 @@ export const Login = () => {
     "password-guide": true,
     "result-guide": true,
   });
-  const idRef = useRef();
-  const passwordRef = useRef();
-  const submitRef = useRef();
+  const idRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const submitRef = useRef<HTMLFormElement>(null);
 
   const idFormGuide = "잘못된 형식의 아이디입니다.";
   const pwFormGuide = "잘못된 형식의 비밀번호입니다.";
   const invalidResultGuide = "아이디 혹은 비밀번호를 다시 확인해주십시오.";
 
   useEffect(() => {
-    idRef.current.focus();
+    idRef.current?.focus();
   }, []);
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export const Login = () => {
     console.log("valid: ", valid);
   }, [hide]);
 
-  const catchEnter = (event) => {
+  const catchEnter = (event: { key: string }) => {
     if (!submitRef) {
       return;
     }
@@ -81,7 +81,9 @@ export const Login = () => {
     setPassword("");
   };
 
-  const idInputHandler = (event) => {
+  const idInputHandler = (event: {
+    target: { value: SetStateAction<string> };
+  }) => {
     if (!convertRegexExecToBoolean(validEmailForm, event.target.value)) {
       setValid((prev) => {
         return { ...prev, "id-valid": false };
@@ -94,7 +96,9 @@ export const Login = () => {
     setId(event.target.value);
   };
 
-  const passwordInputHandler = (event) => {
+  const passwordInputHandler = (event: {
+    target: { value: SetStateAction<string> };
+  }) => {
     if (!convertRegexExecToBoolean(validePasswordForm, event.target.value)) {
       setValid((prev) => {
         return { ...prev, "password-valid": false };
@@ -116,6 +120,7 @@ export const Login = () => {
         borderRadius: "16px",
       }}
     >
+      <h3> Login </h3>
       <form ref={submitRef} onSubmit={submitHandler}>
         <div className={styles["id-wrapper"]}>
           <input
