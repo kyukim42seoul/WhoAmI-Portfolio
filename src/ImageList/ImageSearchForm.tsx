@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./ImageSearchForm.module.css";
 //import { BASE_URL } from "../constants.ts";
 
-//const BASE_URL = import.meta.env.VITE_REQ_TO;
+const BASE_URL = import.meta.env.VITE_REQ_TO;
 
 interface Props {
   setQuery: React.Dispatch<React.SetStateAction<string>>;
@@ -15,11 +15,7 @@ const ImageSearchForm = ({ setQuery }: Props) => {
   const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const seacrhURL =
-      "https://api.pexels.com/v1/" +
-      "search?query=" +
-      searchParam +
-      "&per_page=" +
-      photoCount;
+      BASE_URL + "search?query=" + searchParam + "&per_page=" + photoCount;
     if (searchParam && photoCount) {
       setQuery(seacrhURL);
     }
