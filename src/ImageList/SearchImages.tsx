@@ -4,6 +4,7 @@ import Images from "./Images.tsx";
 import styles from "./SearchImages.module.css";
 
 const API_KEY = import.meta.env.VITE_PHOTO_KEY;
+console.log(`KEYS: ${API_KEY}`, API_KEY);
 
 interface Props {
   query: string;
@@ -21,6 +22,7 @@ const SearchImages = ({ query }: Props) => {
       },
     });
     const resJSON = await res.json();
+    console.log(`response : ${resJSON}`, resJSON);
     setPhotos(resJSON.photos);
     setIsLoading(false);
   };
