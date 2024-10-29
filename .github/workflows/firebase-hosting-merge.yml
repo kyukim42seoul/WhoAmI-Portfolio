@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_PHOTO_KEY: "${{ secrets.NEEDFORPHOTO }}"
-      VITE_BASE_URL: "${{ secrets.PHOTOFROM }}"
+      VITE_REQ_BASE_URL: "${{ secrets.PHOTOFROM }}"
     steps:
       - uses: actions/checkout@v4
       - run: npm install && npm run build

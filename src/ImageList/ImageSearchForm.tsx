@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./ImageSearchForm.module.css";
 //import { BASE_URL } from "../constants.ts";
 
-const BASE_URL = import.meta.env.VITE_BASE_URL;
+const BASE_URL = import.meta.env.VITE_REQ_BASE_URL;
 console.log(`URL: ${BASE_URL}`, BASE_URL);
 
 interface Props {
